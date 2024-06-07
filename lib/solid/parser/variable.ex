@@ -4,7 +4,8 @@ defmodule Solid.Parser.Variable do
 
   @dialyzer :no_opaque
 
-  defp identifier(), do: ascii_string([?a..?z, ?A..?Z, ?0..?9, ?_, ?-, ??], min: 1)
+  #defp identifier(), do: ascii_string([?a..?z, ?A..?Z, ?0..?9, ?_, ?-, ??], min: 1)
+  defp identifier(), do: ascii_string([?0..?9, ?a..?z, ?A..?Z, ?_, ?-, ??], min: 1)
 
   def bracket_access do
     ignore(string("["))
